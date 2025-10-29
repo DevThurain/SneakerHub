@@ -30,7 +30,9 @@ class _PutShoeToBoxWidgetState extends ConsumerState<PutShoeToBoxWidget> {
     final height = MediaQuery.of(context).size.height;
 
     final myDraggableChild = StaticShoeWidget().animate().fadeIn();
-    final myFeedbackWidget = StaticShoeWidget();
+    final myFeedbackWidget = StaticShoeWidget(
+      width: 350,
+    );
 
     final moveDownController = useAnimationController();
     final precacheHook = usPrecache();
@@ -95,15 +97,13 @@ class _PutShoeToBoxWidgetState extends ConsumerState<PutShoeToBoxWidget> {
         children: [
           // shoe + branding + color + size
           SizedBox(
-            // height: height * 0.45,
-            height: 500,
+            height: height * 0.45,
             child: Stack(
               children: [
                 /* Branding */
                 Positioned.fill(
                   child: Image.asset(
                     'assets/pngs/ic_long_nike.png',
-                    height: 400,
                   ),
                 ),
 
@@ -115,18 +115,18 @@ class _PutShoeToBoxWidgetState extends ConsumerState<PutShoeToBoxWidget> {
 
                 /* Select Size */
                 Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.topLeft,
                   child: Padding(
-                    padding: const EdgeInsets.only(left: AppValues.p_16),
+                    padding: const EdgeInsets.only(left: AppValues.p_16, top: AppValues.p_16),
                     child: SelectShoeSizeWidget(),
                   ),
                 ),
 
                 /* Select Color */
                 Align(
-                  alignment: Alignment.centerRight,
+                  alignment: Alignment.topRight,
                   child: Padding(
-                    padding: const EdgeInsets.only(right: AppValues.p_16),
+                    padding: EdgeInsets.only(right: AppValues.p_16, top: height * 0.05),
                     child: SelectShoeColorWidget(),
                   ),
                 ),

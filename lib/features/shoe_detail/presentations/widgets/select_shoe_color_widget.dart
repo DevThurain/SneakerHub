@@ -19,7 +19,7 @@ class SelectShoeColorWidget extends StatelessWidget {
           svgPath: 'assets/svgs/ic_bookmark.svg',
           onTap: () {},
         ),
-        SizedBox(height: 200),
+        SizedBox(height: 80),
         Text(
           'Colour',
           style: TextStyle(

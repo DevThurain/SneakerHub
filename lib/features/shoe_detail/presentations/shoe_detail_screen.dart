@@ -19,7 +19,7 @@ class ShoeDetailScreen extends HookConsumerWidget {
               shoeName: 'Air Max 200 SE',
               cartCount: '2',
             ),
-            SizedBox(height: AppValues.p_32),
+            SizedBox(height: AppValues.p_16),
             PutShoeToBoxWidget(),
           ],
         ),
